@@ -1,0 +1,15 @@
+# 의존성
+node_modules/
+
+# Supabase CLI 가 만드는 로컬 상태 (프로젝트 ref·풀러 URL 등이 들어간다)
+supabase/.temp/
+supabase/.branches/
+
+# 환경변수 — Edge Function 의 SERVICE_ROLE_KEY 가 여기 들어간다. 절대 커밋 금지
+.env
+.env.*
+!.env.example
+
+# 에디터 / OS / 도구 로컬 설정
+.claude/settings.local.json
+.DS_Store
