@@ -430,3 +430,14 @@ entrypoint = "./functions/resolve-login/index.ts"
 # Specifies static files to be bundled with the function. Supports glob patterns.
 # For example, if you want to serve static HTML pages in your function:
 # static_files = [ "./functions/resolve-login/*.html" ]
+
+# 푸시 발송 (마이그레이션 013).
+# 사람이 아니라 DB 트리거(pg_net)가 서버 열쇠를 들고 부른다. 게이트웨이의
+# JWT 검사는 '로그인한 사용자 아무나'를 통과시켜 여기서는 의미가 없고,
+# 새 API 키 형식(sb_secret_…)은 JWT 가 아니라 오히려 먼저 막힌다.
+# 대신 함수가 Authorization 을 서버 열쇠와 직접 대조한다.
+[functions.send-push]
+enabled = true
+verify_jwt = false
+import_map = "./functions/send-push/deno.json"
+entrypoint = "./functions/send-push/index.ts"

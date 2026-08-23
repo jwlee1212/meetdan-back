@@ -10,6 +10,11 @@ supabase/.branches/
 .env.*
 !.env.example
 
+# 손으로 한 번 돌려보는 스크립트. URL·키를 그때그때 박아 쓰기 때문에
+# 저장소에 넣지 않는다. (anon 키는 공개돼도 되는 값이지만, 커밋해 두면
+# 나중에 service_role 키를 박은 스크립트가 같은 자리에 생긴다)
+test-*.mjs
+
 # 에디터 / OS / 도구 로컬 설정
 .claude/settings.local.json
 .DS_Store
